@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    const age = [19,22,19,24,20,25,26,24,25,24]
+    console.log(age.sort());
+    let Min = Math.min(19,22,19,24,20,25,26,24,25,24)
+    console.log(`the min is ${Min}`);
+    
+    let Max = Math.max(19,22,19,24,20,25,26,24,25,24)
+    console.log(`the max is ${Max}`);
+
+    let range = Max - Min
+    console.log(`the range is ${range}`);
+    
+    let average = (age/2)
+    average = ((19 + 22 + 19 + 24 + 20 + 25 + 26 + 24 + 25 + 24)/2)
+    console.log(`the average is ${average}`);
+    
+    let median = (age[4] + age[5]/2)
+    median = (24 + 24)/2
+    console.log(`the median is ${median}`);
+
+    const diffMinAvg = Math.abs(Min - average);
+    const diffMaxAvg = Math.abs(Max - average);
+    console.log(`the diffMinAvg is ${diffMinAvg}`);
+    console.log(`the diffMaxAvg is ${diffMaxAvg}`);
+     if (diffMinAvg > diffMaxAvg) {
+        alert(`the difference between the min and average is greater`)
+     } else if(diffMinAvg < diffMaxAvg) {
+        alert(`the difference between the max and average is greater`)
+     } else {
+        alert(`the difference is equal`)
+     }
+    
+    
+    
+    for (let index = 0; index < array.length; index++) {
+      const element = array[index];
+      
+    }
+    
+    
+    // let max = age[age.length - 1]
+    // console.log(max);
+    
+    
+</script>

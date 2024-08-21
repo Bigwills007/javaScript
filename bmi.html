@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function checkBmi() {
+            if (input1.value.trim () ==  '' || isNaN(input1) () || input.value <= 0 || input2.value <= 0) {
+                outPut1.innerHTML = 'provide a valid input'
+                return
+            }
+            let weight = input1.value.trim() * 10
+            let bmi = (weight = / (input2.value.trim() ** 2)).toFixed(2)
+
+            console.log(bmi);
+            if (bmi< 18.5) {
+                outPut1.innerHTML = 'underweight'
+            } else if (bmi >= 18.5 && Bmi <= 24.9) {
+                output1.innerHTML = 'normal weight'
+            } else if (Bmi >= 25 && bmi <= 29.9) {
+                output1.innerHTML = 'overweight'
+            } else {
+                output1.innerHTML = obese
+            }
+        }
+    </script>
+</body>
+</html>

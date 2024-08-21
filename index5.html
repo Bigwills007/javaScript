@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication table</title>
+    <style>
+        .myTable {
+            width: 500px;
+            height: fit-content;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <input id="input1" type="number">
+    <input id="input2" type="number">
+    <button onclick="check()">check</button>
+
+    <div class="myTable">
+        <div id="output" ></div>
+    </div>
+    
+</body>
+</html>
+<script>
+
+    function check() {
+        let input1 = document.getElementById('input1');
+    let input2 = document.getElementById('input2');
+    
+    const myOutput = document.getElementById('output');
+
+    let inputO = Number(input1.value);
+    let inputT = Number(input2.value);
+
+    input1.value = "";
+    input2.value = "";
+    myOutput.innerHTML = "";
+
+
+
+
+        for (let i = inputO; i <= inputT; i++) {
+            for(let j=1; j <= 12; j++) {
+                let output = `${i} * ${j} = ${i * j}<br>`
+                myOutput.innerHTML += output;
+             }
+                myOutput.innerHTML += "<br><br>";
+            
+           
+           
+            
+        }
+
+       
+        
+    }
+   \
+    }
+</script>

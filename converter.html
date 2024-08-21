@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input" type="number">
+    <button onclick="check()">check</button>
+    <div id="result"></div>
+    <script>
+       
+        function check(params) {
+
+            let input = document.getElementById('input')
+        let result = document.getElementById('result')
+
+        inputValue = Number(input.value)
+        let convert = (inputValue * 9/5) + 32
+        result.innerHTML = convert
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word | Filter</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rebeccapurple;
+            padding: 50px;
+        }
+        .id{
+            padding: 50px;
+            width: 300px;
+            height: 300px;
+            background-color: white;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            gap: 30px;
+        }
+        h1{
+            font-size: 24px;
+            color: cornflowerblue;
+        }
+    input{
+        padding: 7px 15px;
+        border: 2px solid purple;
+        border-radius: 10px;
+        width: 250px;
+    }
+    button{
+        margin: 10px;
+        padding: 7px 15px;
+        background-color: cadetblue;
+        border: 1px solid cadetblue;
+        font-size: 20px;
+        font-weight: 550;
+    }
+    </style>
+</head>
+<body>
+    <div >
+        <h1>WORDFILTER</h1>
+            <input  id="output" type="text">
+            <button onclick="buttonCheck(event)">Check</button>
+            <div id="myOutput"></div>
+    </div>
+</body>
+</html>
+<script>
+    const preview = document.getElementById('MYOutput')
+    function sensor() {
+        const input = document.getElementById('output').value
+        const sensorword = output.replace('shit' '*****')replace('fuck' '*****')replace('foolish' '*****')replace('stupid' '*****')
+
+        
+    }
+</script>
+<!-- <script src="script2.js"></script> -->

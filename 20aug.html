@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- The same groups apply to both men and women.
+Underweight: BMI is less than 18.5
+Normal weight: BMI is 18.5 to 24.9
+Overweight: BMI is 25 to 29.9
+Obese: BMI is 30 or more -->
+
+<script>
+   let wisdom = {
+    name : 'wisdom',
+    age : 14,
+    class : 'jss3',
+    occupation : 'student',
+    swim : function () {
+        return 'i am swimming'
+        
+    },
+    
+
+   }
+
+   console.log(wisdom);
+   wisdom.age = 67
+
+   let arr = [1,2,3,4,5,6,7,8,9]
+   let i = 0
+   for (const number of arr) {
+   
+    console.log(`${number} * ${i}= ${number * i}`);
+    i++
+   }
+   for (let  key in wisdom) {
+    console.log(`${key} : ${wisdom[key]}`);
+
+   }
+
+
+   const users = {
+  Alex: {
+    email: 'alex@alex.com',
+    skills: ['HTML', 'CSS', 'JavaScript'],
+    age: 20,
+    isLoggedIn: false,
+    points: 30
+  },
+  Asab: {
+    email: 'asab@asab.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'Redux', 'MongoDB', 'Express', 'React', 'Node'],
+    age: 25,
+    isLoggedIn: false,
+    points: 50
+  },
+  Brook: {
+    email: 'daniel@daniel.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux'],
+    age: 30,
+    isLoggedIn: true,
+    points: 50
+  },
+  Daniel: {
+    email: 'daniel@alex.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'Python'],
+    age: 20,
+    isLoggedIn: false,
+    points: 40
+  },
+  John: {
+    email: 'john@john.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node.js'],
+    age: 20,
+    isLoggedIn: true,
+    points: 50
+  },
+  Thomas: {
+    email: 'thomas@thomas.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'React'],
+    age: 20,
+    isLoggedIn: false,
+    points: 40
+  },
+  Paul: {
+    email: 'paul@paul.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'MongoDB', 'Express', 'React', 'Node'],
+    age: 20,
+    isLoggedIn: false,
+    points: 40
+  }
+}
+let pointCount = 0
+let peoplePoint = [];
+for (const key in users) {
+    if (users[key].points >= 50){
+      pointCount++
+      peoplePoint.push(key);
+    }
+    
+ 
+    
+    }
+     console.log(pointCount);
+  console.log(peoplePoint);
+
+
+    let isLoggedIn = 0
+    let isLoggedInuser = [] 
+    let notLoggedIn = []
+    for (const key in users) {
+  
+        if (users[key].isLoggedIn === true) { 
+            isLoggedIn++
+            isLoggedInuser.push(key)
+        }
+       if (users[key].isLoggedIn === false) {
+        notLoggedIn.push(key)
+        
+       }
+    }
+    console.log(isLoggedIn);
+    console.log(isLoggedInuser);
+   console.log(notLoggedIn);
+
+
+    
+    // for (const key in peoplePoint) {
+    //     if (users) {
+    //      ;
+            
+    //     }
+    // }
+
+
+
+</script>
+</body>
+</html>
