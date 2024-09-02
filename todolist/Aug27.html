@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        tr,
+        td,
+        thead,
+        tbody {
+            border-collapse: collapse;
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <select id="provider">
+        <option value=""> choose provider </option>
+        <option value="mtn"> mtn </option>
+        <option value="glo"> glo </option>
+        <option value="airtel"> airtel </option>
+        <option value="9mobile"> 9mobile </option>
+    </select>
+
+    <select id="amount">
+        <option value=""> choose amount </option>
+        <option value="100"> 100 </option>
+        <option value="200"> 200 </option>
+        <option value="500"> 500 </option>
+        <option value="1000"> 1000 </option>
+    </select>
+
+    <p id="thePin"> </p>
+    <button onclick="generetePin()"> generate </button>
+
+    <input type="text" id="CardInput" placeholder="*310*pin#">
+    <button onclick="loadCard()"> load </button>
+
+    <table style="margin-top: 10px;">
+        <thead>
+            <th> s/n</th>
+            <th> pin </th>
+            <th> provider</th>
+            <th> amount </th>
+            <th> used </th>
+        </thead>
+        <tbody id="tbody">
+
+
+
+        </tbody>
+    </table>
+
+</body>
+
+</html>
+<script>
+
+    let rechargeCards = JSON.parse(localStorage.getItem('rechargeCards1')) || []
+
+    function generetePin() {
+        if (provider.value == '' || amount.value == '') {
+            alert('all fields are mandatory')
+            return
+        }
+
+        let pin = ''
+        for (let index = 0; index < 15; index++) {
+            let randomNum = Math.floor(Math.random() * 10)
+            pin = pin + randomNum
+        }
+
+        thePin.innerHTML = pin
+        let cardObj = {
+            pin: pin,
+            provider: provider.value,
+            amount: amount.value,
+            isUsed: false
+        }
+
+        rechargeCards.push(cardObj)
+        localStorage.setItem('rechargeCards1', JSON.stringify(rechargeCards))
+        display()
+
+
+    }
+
+    function display() {
+        tbody.innerHTML = ''
+        rechargeCards.forEach((cardObj, i, arr) => {
+            tbody.innerHTML += ` <tr>
+                <td> ${i + 1}  </td>
+                <td> ${cardObj.pin} </td>
+                <td> ${cardObj.provider} </td>
+                <td> ${cardObj.amount} </td>
+                <td> ${cardObj.isUsed} </td>
+            </tr>`
+        })
+    }
+
+    display()
+
+    function loadCard() {
+        if (CardInput.value.trim()) {
+            let cardValue = CardInput.value
+            console.log(cardValue);
+            let CardPin = cardValue.slice(5, 20)
+            console.log(CardPin);
+
+            let cardToBeFound = rechargeCards.find((cardObj) => { return cardObj.pin === CardPin })
+
+            if (!cardToBeFound) {
+                alert('invalid Card')
+            } else if (cardToBeFound && cardToBeFound.isUsed === true) {
+                alert('card has already been used')
+            } else if (cardValue === `*311*${cardToBeFound.pin}#`) {
+                cardToBeFound.isUsed = true
+                localStorage.setItem('rechargeCards1', JSON.stringify(rechargeCards))
+                display()
+                alert(`you have successfully recharged ${cardToBeFound.amount} of ${cardToBeFound.provider}`)
+            } else {
+                alert('invalid format')
+            }
+
+
+
+
+        } else {
+            alert('input a value')
+        }
+
+    }
+
+    // localStorage.clear()
+    // localStorage.setItem('drake', JSON.stringify([2, 3, 4, 5,]))
+
+
+    // let myItem = JSON.parse(localStorage.getItem('drake'))
+    // console.log(myItem, typeof myItem);
+    // localStorage.removeItem('drake')
+</script>

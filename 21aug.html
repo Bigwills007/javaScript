@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+// forEach map reduce some every find findIndex Filter
+</html>
+<script>
+    let arr = [1,2,3,4,5,6,7,8,9,10]
+    let namesArr = [name: 'dan' , class: 'ss3}']
+    arr.forEach(function(num , index , array){
+
+        console.log(`2 * ${index} = ${2 * index}`);
+    }) 
+
+let newArr = arr.map((num, index, array) => {
+    console.log('hello');
+    return 2
+})
+
+let total = arr.reduce((a , b) => a-b, 0)
+console.log(total);
+let doesArrHaveValues5 = arr.every((num) => typeof num === 'number')
+console.log(doesArrHaveValues5);
+</script>       
